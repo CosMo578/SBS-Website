@@ -1,0 +1,669 @@
+@use 'global';
+@import 'mixins';
+@import 'variables';
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*                  Header                 *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+header {
+    max-width: 100vw;
+    max-height: 10vh;
+    padding: 1.25rem $pad;
+    animation: slide-down 2s cubic-bezier(0.8, 0, 0.2, 0.1) forwards;
+
+    // Glassmorphism
+    background: rgba(145, 33, 196, 0.2);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+
+    .img-wrap {
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fade-in 2s ease-in 500ms forwards;
+
+        img {
+            // width: 100%;
+            height: 60px;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            transform: scale(1.2);
+        }
+    }
+
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li {
+        display: inline-block;
+        margin-right: 1.875rem;
+        animation: slide-left 2s ease-in forwards;
+
+        &:nth-child(1) {
+            animation-delay: 1500ms;
+        }
+
+        &:nth-child(2) {
+            animation-delay: 1600ms;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 1700ms;
+        }
+
+        &:nth-child(4) {
+            animation-delay: 1800ms;
+        }
+    }
+
+    li,
+    button,
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    button {
+        @include btn-temp;
+        animation: slide-left 2s ease-in 1900ms forwards;
+    }
+
+    #menu {
+        display: none;
+    }
+
+}
+
+/* >  > > > > > > > > > > > > > > > > > > > 
+>                                         >
+>            Header Animation             >
+>                                         >
+> > > > > > > > > > > > > > > > > > > > > */
+
+header {
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: scale(-50%);
+        }
+
+        50%,
+        60%,
+        70%,
+        80% {
+            opacity: 0;
+        }
+
+        90% {
+            opacity: 0.9;
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slide-left {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        50%,
+        60%,
+        70% {
+            opacity: 0;
+        }
+
+        80% {
+            opacity: 0.8;
+        }
+
+        90% {
+            opacity: 0.9;
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+}
+
+
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*             Hero Section                *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+.hero {
+    max-width: 100vw;
+    min-height: 100vh;
+    padding: 0 $pad;
+    padding-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    .hero-text {
+        line-height: 1.8;
+        width: auto;
+
+        h1 {
+            font-size: 2.875rem;
+            animation: slide-down 1.8s ease-in 2250ms forwards;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            animation: slide-down 1.8s ease-in 2200ms forwards;
+        }
+
+        button {
+            @include btn-temp;
+            color: $text;
+            border: 0.125rem solid $text;
+            animation: slide-down 1.8s ease-in 2000ms forwards;
+        }
+
+    }
+
+    .hero-img-container {
+        max-width: 50%;
+
+        img {
+            height: 70vh;
+            width: 100%;
+            animation: move-in 2s ease-out 2450ms forwards;
+        }
+    }
+
+
+}
+
+/* >  > > > > > > > > > > > > > > > > > > > 
+>                                         >
+>             Hero Animation              >
+>                                         >
+> > > > > > > > > > > > > > > > > > > > > */
+
+.hero {
+    @keyframes move-in {
+        from {
+            opacity: 0;
+            transform: translateX(-200vw);
+        }
+
+        90% {
+            opacity: 0;
+        }
+
+        97% {
+            opacity: 0.8;
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slide-down {
+        from {
+            opacity: 0;
+            transform: translateY(-200px);
+        }
+
+        90% {
+            opacity: 0;
+        }
+
+        97% {
+            opacity: 0.8;
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*             About Section               *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+.about {
+
+    .spacer {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        border-radius: 0.625rem;
+        max-height: 100%;
+        background: rgba(145, 33, 196, 0.2);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+
+        .about-brand {
+            padding: 2em;
+            min-width: 50%;
+            line-height: 2;
+        }
+
+        .about-ceo {
+            padding: 2em;
+            min-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            img {
+                width: 7.5rem;
+                height: 7.5rem;
+                border-radius: 100%;
+            }
+
+            h2 {
+                margin: 0.9375rem 0;
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*             Services Section            *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+.services {
+    .services-parent {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 1.25rem;
+        max-width: 100%;
+
+        .services-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            border-radius: 1vw;
+
+            .img-container {
+                max-width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text-container {
+                text-align: center;
+                padding: 0 0.625rem;
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*             Reviews Section             *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+.review {
+    .review-container {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+        grid-gap: 1.25rem;
+        max-width: 100%;
+        height: fit-content;
+
+        .review-child {
+            padding: 0.5rem;
+
+            .customer-details {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                margin-bottom: 20px;
+
+                img {
+                    border: 1px solid hsl(324, 81%, 65%);
+                    width: 3.75rem;
+                    border-radius: 50%;
+                    aspect-ratio: 1/1;
+                }
+
+
+
+                .star {
+                    font-size: 1rem;
+                }
+
+                .star-green {
+                    color: #E92F9F;
+                }
+
+                .fa-sharp {
+                    color: grey;
+                    font-size: 2.5rem;
+                }
+            }
+
+            .customer-message {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*             Appointment Section         *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+.appointment {
+    h1 {
+        margin-bottom: 3.125rem;
+    }
+
+    .appointment-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: fit-content;
+
+        div {
+            width: 50%;
+            height: max-content;
+
+            img {
+                width: 100%;
+                height: 100%;
+                max-height: fit-content;
+            }
+
+            form {
+
+                input,
+                textarea {
+                    display: block;
+                    width: 100%;
+                    padding: 1.125rem;
+                    margin: 0 auto;
+                    margin-bottom: 1.25rem;
+                    color: #000;
+
+                    &::placeholder {
+                        color: gray;
+                    }
+
+                    &:focus {
+                        outline: 1px solid #b048e0;
+                        // color: 
+                    }
+                }
+
+                button {
+                    display: block;
+                    align-self: flex-end;
+                    background: #b048e0;
+                    padding: 1em;
+                    border: unset;
+                    margin-left: auto;
+                }
+            }
+
+            textarea {
+                resize: none;
+            }
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*            Footer  Section              *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+footer {
+    background: #fe3fe2;
+    max-width: 100vw;
+    min-height: 10vh;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style-type: none;
+        margin-top: 25px;
+
+        li {
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+
+                ion-icon {
+                    font-size: clamp(18px, 2.3vw, 24px);
+
+                    &:nth-child(1):hover {
+                        color: purple;
+                    }
+
+                    &:nth-child(2):hover {
+                        color: green;
+                    }
+
+                    &:nth-child(3):hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * *  * 
+*                                         *
+*               Media Queries             *
+*                                         *
+* * * * * * * * * * * * * * * * * * * * * */
+
+.show {
+    display: block;
+    background: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 10s ease-in;
+}
+
+
+
+@media screen and (width <=768px) {
+
+    // Header
+    header {
+        overflow: visible;
+
+        nav {
+            ul {
+                display: none;
+
+                li {
+                    display: block;
+                }
+
+            }
+
+            #menu {
+                display: inline-block;
+                font-size: 24px;
+                z-index: 1000;
+
+                & :hover {
+                    cursor: pointer;
+                    color: #fe3fe2;
+                }
+            }
+        }
+    }
+
+    // About Section
+    .spacer {
+        flex-direction: column;
+        height: auto;
+
+        .about-brand,
+        .about-ceo {
+            min-width: 100%;
+        }
+
+    }
+
+    .about-ceo {
+        border-top: 2px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        min-height: 100vh;
+        padding-top: 10vh;
+
+        .hero-text {
+            height: 50%;
+            width: 100%;
+            // margin-top: 2.5rem;
+        }
+
+        .hero-img-container {
+            max-width: 100%;
+            max-height: 50%;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+
+    .section-heading {
+        text-align: center;
+    }
+
+    .appointment-container {
+        gap: 0px;
+        justify-content: center;
+
+        .form {
+            min-width: 100%;
+
+            input {
+                min-width: 100%;
+            }
+        }
+
+        img {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+}
+
+@media screen and (width <=1024px) {
+    header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+}
+
+@media screen and (width > 768px) {
+    .about-ceo {
+        border-left: 2px solid #fff;
+        // margin-left: unset;
+    }
+
+}

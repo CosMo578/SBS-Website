@@ -15,7 +15,8 @@ html {
 
 body {
     font-size: clamp(14px, 2vw, 16px);
-    background-color: rgb(32, 4, 21);
+    // background-color: rgb(32, 4, 21);
+    background-color: #070808;
     font-family: $font-fam;
     overflow-x: hidden;
     position: relative;
@@ -34,35 +35,17 @@ section {
     }
 }
 
-// h1 {
-//     font-size: 2vw;
-// }
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
 
-// h2 {
-//     font-size: 1.5vw;
-// }
+body::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
 
-// @media screen and (width <= 576px) {
-//     :root {
-//         font-size: 14px;
-//     }
-//     // h1 {
-//     //     font-size: 0.875rem;
-//     // }
-// }
-// @media screen and (width <=768px) {
-//     :root {
-//         font-size: 14px;
-//     }
-//     // h1 {
-//     //     font-size: 3.13vw;
-//     // }
-// }
-// @media screen and (width <= 992px) {
-//     :root {
-//         font-size: 16px;
-//     }
-//     // h1 {
-//     //     font-size: 1.25rem;
-//     // }
-// }
+body::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}

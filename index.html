@@ -6,6 +6,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Styled By Stella</title>
+    <meta property="og:type" content="business website" />
+    <meta
+      property="og:description"
+      content="Official webpage for Styled by Stella." />
+
     <link rel="icon" type="image/svg+xml" href="/assets/sbs.png" />
 
     <!-- CSS and JavaScript -->
@@ -14,22 +19,22 @@
     <!-- CSS and JavaScript -->
 
     <script
-      async
+      defer
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script
-      async
+      defer
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script
-      async
+      defer
       src="https://kit.fontawesome.com/4edeb67f53.js"
       crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <header class="hidden">
-      <div class="img-wrap hidden">
+    <header class="">
+      <div class="img-wrap">
         <img src="/assets/sbs.png" alt="Styled By Stella Logo" />
       </div>
 
@@ -39,8 +44,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#reviews">Review</a></li>
-          <button class="hidden"><a href="#appointment">Appointment</a></button>
         </ul>
+        <button class="hidden"><a href="#appointment">Appointment</a></button>
         <span id="menu"><ion-icon name="menu"></ion-icon></span>
       </nav>
     </header>
@@ -63,8 +68,8 @@
 
     <section class="about" id="about">
       <h1 class="section-heading">About</h1>
-      <div class="spacer">
-        <div class="about-brand">
+      <div class="spacer hidden-el">
+        <div class="about-brand hidden-el">
           <h2>About Brand</h2>
           <p>
             Styled by Stella is an extraordinary unisex hair styling brand with
@@ -75,7 +80,7 @@
             fugit beatae magnam? Rem, provident vel.
           </p>
         </div>
-        <div class="about-ceo">
+        <div class="about-ceo hidden-el">
           <div>
             <img src="/assets/logo.png" alt="CEO Image" />
           </div>
@@ -100,10 +105,22 @@
       <h1 class="section-heading">Services</h1>
 
       <div class="services-parent">
-        <div class="services-child">
-          <div class="img-container">
+        <div class="services-child hidden-el">
             <img src="/assets/logo.png" alt="display image" />
+          
+            <div class="text-container">
+            <h2>Service Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
+              numquam id voluptates, impedit placeat error veritatis similique
+              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
+              veniam quae et architecto quis!
+            </p>
           </div>
+        </div>
+
+        <div class="services-child hidden-el">
+            <img loading="lazy" src="/assets/logo.png" alt="display image" />
           <div class="text-container">
             <h2>Service Title</h2>
             <p>
@@ -115,10 +132,8 @@
           </div>
         </div>
 
-        <div class="services-child">
-          <div class="img-container">
-            <img src="/assets/logo.png" alt="display image" />
-          </div>
+        <div class="services-child hidden-el">
+            <img loading="lazy" src="/assets/logo.png" alt="display image" />
           <div class="text-container">
             <h2>Service Title</h2>
             <p>
@@ -130,10 +145,8 @@
           </div>
         </div>
 
-        <div class="services-child">
-          <div class="img-container">
-            <img src="/assets/logo.png" alt="display image" />
-          </div>
+        <div class="services-child hidden-el">
+            <img loading="lazy" src="/assets/logo.png" alt="display image" />
           <div class="text-container">
             <h2>Service Title</h2>
             <p>
@@ -145,25 +158,8 @@
           </div>
         </div>
 
-        <div class="services-child">
-          <div class="img-container">
-            <img src="/assets/logo.png" alt="display image" />
-          </div>
-          <div class="text-container">
-            <h2>Service Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
-              numquam id voluptates, impedit placeat error veritatis similique
-              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
-              veniam quae et architecto quis!
-            </p>
-          </div>
-        </div>
-
-        <div class="services-child">
-          <div class="img-container">
-            <img src="/assets/logo.png" alt="display image" />
-          </div>
+        <div class="services-child hidden-el">
+            <img loading="lazy" src="/assets/logo.png" alt="display image" />
           <div class="text-container">
             <h2>Service Title</h2>
             <p>
@@ -180,9 +176,9 @@
     <section class="review" id="reviews">
       <h1 class="section-heading">Reviews</h1>
       <div class="review-container">
-        <div class="review-child">
+        <div class="review-child hidden-el">
           <div class="customer-details">
-            <img src="/assets/sbs.png" alt="customer image" />
+            <img loading="lazy" src="/assets/sbs.png" alt="customer image" />
             <div>
               <h3>Mc Carthy</h3>
               <ion-icon class="star star-green" name="star"></ion-icon>
@@ -206,9 +202,9 @@
           </div>
         </div>
 
-        <div class="review-child">
+        <div class="review-child hidden-el">
           <div class="customer-details">
-            <img src="/assets/sbs.png" alt="customer image" />
+            <img loading="lazy" src="/assets/sbs.png" alt="customer image" />
             <div>
               <h3>Julianna</h3>
               <ion-icon class="star star-green" name="star"></ion-icon>
@@ -232,9 +228,9 @@
           </div>
         </div>
 
-        <div class="review-child">
+        <div class="review-child hidden-el">
           <div class="customer-details">
-            <img src="/assets/sbs.png" alt="customer image" />
+            <img loading="lazy" src="/assets/sbs.png" alt="customer image" />
             <div>
               <h3>Timmy</h3>
               <ion-icon class="star star-green" name="star"></ion-icon>
@@ -258,9 +254,9 @@
           </div>
         </div>
 
-        <div class="review-child">
+        <div class="review-child hidden-el">
           <div class="customer-details">
-            <img src="/assets/sbs.png" alt="customer image" />
+            <img loading="lazy" src="/assets/sbs.png" alt="customer image" />
             <div>
               <h3>Smith</h3>
               <ion-icon class="star star-green" name="star"></ion-icon>
@@ -284,9 +280,9 @@
           </div>
         </div>
 
-        <div class="review-child">
+        <div class="review-child hidden-el">
           <div class="customer-details">
-            <img src="/assets/sbs.png" alt="customer image" />
+            <img loading="lazy" src="/assets/sbs.png" alt="customer image" />
             <div>
               <h3>CosMo</h3>
               <ion-icon class="star star-green" name="star"></ion-icon>
@@ -316,10 +312,10 @@
       <h1 class="section-heading">Appointment</h1>
 
       <div class="appointment-container">
-        <div class="svg-illustration">
-          <img src="/assets/Team-bro.svg" alt="illustration" />
+        <div class="svg-illustration hidden-el">
+          <img loading="lazy" src="/assets/Team-bro.svg" alt="illustration" />
         </div>
-        <div class="form">
+        <div class="form hidden-el">
           <form method="get">
             <input
               required
@@ -348,11 +344,11 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="hidden-el">
       <div class="flex-parent-1">
         <div class="flex-child">
           <div>
-            <img src="/assets/logo.png" alt="sbs logo" />
+            <img loading="lazy" src="/assets/logo.png" alt="sbs logo" />
           </div>
           <h2>Styled by stella</h2>
           <p>
@@ -394,8 +390,8 @@
       </div>
       <hr />
       <div class="flex-parent-2">
-        <div>© SBS Copyright 2023</div>
-        <div>Developed by Dev. Ralph</div>
+        <div>Copyright © 2023 All Rights Reserved. SBS.</div>
+        <div>Made with ❤ by @Dev. Ralph</div>
       </div>
     </footer>
   </body>

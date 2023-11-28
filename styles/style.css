@@ -12,7 +12,7 @@ html {
 
 body {
   font-size: clamp(14px, 2vw, 16px);
-  background-color: rgb(32, 4, 21);
+  background-color: #070808;
   font-family: Arima, "Lucida Sans", "Lucida Sans Regular";
   overflow-x: hidden;
   position: relative;
@@ -30,15 +30,54 @@ section .section-heading {
   margin-bottom: 3.125rem;
 }
 
-.hidden {
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #201c29;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25), inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+body::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+.hidden,
+.hidden-el {
   opacity: 0;
   transition: all 1s;
+  filter: blur(100%);
 }
 
-.show {
+.show,
+.show-el {
   opacity: 1;
+  filter: blur(0);
 }
 
+.show-el {
+  animation: service-child 1s ease-in;
+}
+
+@keyframes service-child {
+  from {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  50%, 60%, 70%, 80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* * * * * * * * * * * * * * * * * * * *  * 
 *                                         *
 *                  Header                 *
@@ -62,6 +101,9 @@ header {
   justify-content: space-between;
   z-index: 1;
 }
+header h1 {
+  background: linear-gradient(to right #9121c4, hsl(281, 71%, 35%), #9121c2);
+}
 header .img-wrap {
   max-width: 100%;
   max-height: 100%;
@@ -76,6 +118,10 @@ header .img-wrap img {
   -o-object-fit: contain;
      object-fit: contain;
   transform: scale(1.2);
+}
+header nav {
+  display: flex;
+  align-items: center;
 }
 header ul {
   list-style-type: none;
@@ -105,15 +151,13 @@ header a {
   color: inherit;
 }
 header button {
-  border: 2px solid #9121c4;
-  background-color: transparent;
-  color: #9121c4;
-  font-size: 17px;
+  background-color: #e92f9f;
   font-weight: 700;
-  padding: 0.8rem;
-  display: inline-block;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  padding: 1rem;
+  display: inline;
+  color: #272727;
+  border: unset;
+  border-radius: 0.5em;
   animation: slide-left 2s ease-in 1900ms forwards;
 }
 header #menu {
@@ -177,12 +221,15 @@ header #menu {
 .hero {
   max-width: 100vw;
   min-height: 100vh;
-  padding: 0 2.5rem;
+  padding: 2.5rem;
   padding-top: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 .hero .hero-text {
   line-height: 1.8;
@@ -197,17 +244,13 @@ header #menu {
   animation: slide-down 1.8s ease-in 2200ms forwards;
 }
 .hero .hero-text button {
-  border: 2px solid #9121c4;
-  background-color: transparent;
-  color: #9121c4;
-  font-size: 17px;
+  background-color: #e92f9f;
   font-weight: 700;
-  padding: 0.8rem;
+  padding: 1rem;
   display: inline-block;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  color: #fff;
-  border: 0.125rem solid #fff;
+  color: #272727;
+  border: unset;
+  border-radius: 0.5em;
   animation: slide-down 1.8s ease-in 2000ms forwards;
 }
 .hero .hero-img-container {
@@ -262,6 +305,14 @@ header #menu {
 *             About Section               *
 *                                         *
 * * * * * * * * * * * * * * * * * * * * * */
+.about {
+  background-image: url(/assets/circle-scatter-haikei.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
 .about .spacer {
   display: flex;
   align-items: center;
@@ -311,18 +362,19 @@ header #menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding-bottom: 1rem;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(80, 79, 79, 0.24) 0px 6px 6px;
+  box-shadow: 0px 3px 8px;
 }
-.services .services-parent .services-child .img-container {
+.services .services-parent .services-child img {
   width: 100%;
-}
-.services .services-parent .services-child .img-container img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 50%;
 }
 .services .services-parent .services-child .text-container {
+  max-height: 50%;
   padding: 0 0.625rem;
 }
 .services .services-parent .services-child .text-container h2 {
@@ -347,6 +399,8 @@ header #menu {
   height: fit-content;
 }
 .review .review-container .review-child {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(80, 79, 79, 0.24) 0px 6px 6px;
+  box-shadow: 0px 3px 8px;
   padding: 0.5rem;
 }
 .review .review-container .review-child .customer-details {
@@ -440,7 +494,7 @@ header #menu {
 * * * * * * * * * * * * * * * * * * * * * */
 footer {
   padding: 1.25rem 2.5rem;
-  background: #fe3fe2;
+  background: hsl(180, 7%, 5%);
   max-width: 100vw;
   height: -moz-fit-content;
   height: fit-content;
@@ -486,10 +540,15 @@ footer .flex-child .flex-child-span {
   display: block;
 }
 footer .flex-child .social-link {
+  margin-top: 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 100%;
+}
+footer .flex-child .social-link li {
+  scale: 1.5;
+  margin-right: 20px;
 }
 
 /* * * * * * * * * * * * * * * * * * * *  * 
@@ -513,6 +572,11 @@ footer .flex-child .social-link {
   transition: all 10s ease-in;
 }
 
+@media screen and (width <= 500px) {
+  footer .flex-parent-2 {
+    flex-direction: column;
+  }
+}
 @media screen and (width <= 768px) {
   header {
     overflow: visible;

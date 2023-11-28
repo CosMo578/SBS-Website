@@ -14,7 +14,7 @@ function showMenu() {
   }
 }
 
-// Handlig Emails
+// Handling Emails
 
 const recipient = 'raphaelakpor00@gmail.com';
 const emailSubjectInput = document.getElementById('emailSubject');
@@ -37,16 +37,17 @@ function sendMail() {
 }
 
 // Intersection Observer
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     console.log(entry);
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('show');
-//     } else {
-//       entry.target.classList.remove('show');
-//     }
-//   });
-// });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-el');
+    }
+    // else {
+    //   entry.target.classList.remove('show-el');
+    // }
+  });
+});
 
-// const hiddenElements = document.querySelectorAll('.hidden');
-// hiddenElements.forEach((el) => observer.observe(el));
+const hiddenElements = document.querySelectorAll('.hidden-el');
+hiddenElements.forEach((el) => observer.observe(el));

@@ -20,13 +20,13 @@ body {
   min-height: 100vh;
 }
 
-section {
+section, .hero {
   min-height: 100vh;
   max-width: 100vw;
   padding: 2.5rem;
   padding-top: 12vh;
 }
-section .section-heading {
+section .section-heading, .hero .section-heading {
   margin-bottom: 3.125rem;
 }
 
@@ -43,6 +43,32 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
   background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+input,
+textarea,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+ion-icon {
+  font-size: inherit;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #e92f9f;
+  text-decoration: underline;
+}
+
+button a:hover {
+  text-decoration: none;
 }
 
 .hidden,
@@ -78,6 +104,27 @@ body::-webkit-scrollbar-track {
     transform: translateY(0);
   }
 }
+.hero button,
+.appointment button,
+header button {
+  display: block;
+  padding: 1em;
+  background-color: #e92f9f;
+  font-weight: 700;
+  color: inherit;
+  border: 1px solid #e92f9f;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 100ms ease-out;
+}
+.hero button:hover,
+.appointment button:hover,
+header button:hover {
+  background-color: transparent;
+  border: 1px solid #e92f9f;
+  color: #e92f9f;
+}
+
 /* * * * * * * * * * * * * * * * * * * *  * 
 *                                         *
 *                  Header                 *
@@ -101,23 +148,10 @@ header {
   justify-content: space-between;
   z-index: 1;
 }
-header h1 {
-  background: linear-gradient(to right #9121c4, hsl(281, 71%, 35%), #9121c2);
-}
-header .img-wrap {
-  max-width: 100%;
-  max-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+header img {
+  max-width: 60px;
+  height: auto;
   animation: fade-in 2s ease-in 500ms forwards;
-}
-header .img-wrap img {
-  height: 60px;
-  aspect-ratio: 1/1;
-  -o-object-fit: contain;
-     object-fit: contain;
-  transform: scale(1.2);
 }
 header nav {
   display: flex;
@@ -129,7 +163,7 @@ header ul {
 header ul li {
   display: inline-block;
   margin-right: 1.875rem;
-  animation: slide-left 2s ease-in forwards;
+  animation: slide-left 2s ease-in;
 }
 header ul li:nth-child(1) {
   animation-delay: 1500ms;
@@ -151,13 +185,11 @@ header a {
   color: inherit;
 }
 header button {
-  background-color: #e92f9f;
-  font-weight: 700;
-  padding: 1rem;
   display: inline;
-  color: #272727;
-  border: unset;
-  border-radius: 0.5em;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  padding: 0.5em;
   animation: slide-left 2s ease-in 1900ms forwards;
 }
 header #menu {
@@ -169,16 +201,18 @@ header #menu {
 >            Header Animation             >
 >                                         >
 > > > > > > > > > > > > > > > > > > > > > */
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 @keyframes fade-in {
   from {
     opacity: 0;
     transform: scale(-50%);
-  }
-  50%, 60%, 70%, 80% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0.9;
   }
   to {
     opacity: 1;
@@ -190,26 +224,12 @@ header #menu {
     opacity: 0;
     transform: translateX(-100%);
   }
-  50%, 60%, 70% {
+  70% {
     opacity: 0;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  90% {
-    opacity: 0.9;
   }
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-@keyframes slide-down {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 
@@ -219,17 +239,11 @@ header #menu {
 *                                         *
 * * * * * * * * * * * * * * * * * * * * * */
 .hero {
-  max-width: 100vw;
-  min-height: 100vh;
-  padding: 2.5rem;
   padding-top: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
 }
 .hero .hero-text {
   line-height: 1.8;
@@ -240,25 +254,15 @@ header #menu {
   animation: slide-down 1.8s ease-in 2250ms forwards;
 }
 .hero .hero-text p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   animation: slide-down 1.8s ease-in 2200ms forwards;
 }
 .hero .hero-text button {
-  background-color: #e92f9f;
-  font-weight: 700;
-  padding: 1rem;
-  display: inline-block;
-  color: #272727;
-  border: unset;
-  border-radius: 0.5em;
   animation: slide-down 1.8s ease-in 2000ms forwards;
 }
-.hero .hero-img-container {
-  max-width: 50%;
-}
-.hero .hero-img-container img {
-  height: 70vh;
-  width: 100%;
+.hero img {
+  max-height: 70vh;
+  width: auto;
   animation: move-in 2s ease-out 2450ms forwards;
 }
 
@@ -319,7 +323,7 @@ header #menu {
   max-width: 100%;
   border-radius: 0.625rem;
   max-height: 100%;
-  background: rgba(145, 33, 196, 0.2);
+  background: hsla(281, 71%, 45%, 0.2);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -355,7 +359,7 @@ header #menu {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 1.25rem;
+  grid-gap: 1.5625rem;
   max-width: 100%;
 }
 .services .services-parent .services-child {
@@ -365,20 +369,24 @@ header #menu {
   padding-bottom: 1rem;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: hsla(324, 81%, 55%, 0.9) 0px 10px 20px, hsla(324, 81%, 55%, 0.239) 0px 6px 6px;
+}
+.services .services-parent .services-child:hover {
+  scale: 1.02;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(80, 79, 79, 0.24) 0px 6px 6px;
-  box-shadow: 0px 3px 8px;
 }
 .services .services-parent .services-child img {
   width: 100%;
   max-width: 100%;
-  max-height: 50%;
+  height: auto;
 }
 .services .services-parent .services-child .text-container {
-  max-height: 50%;
-  padding: 0 0.625rem;
+  min-height: 50%;
+  padding: 0.98rem;
 }
 .services .services-parent .services-child .text-container h2 {
   margin: 10px auto;
+  text-align: center;
 }
 .services .services-parent .services-child .text-container p {
   text-align: left;
@@ -392,28 +400,32 @@ header #menu {
 .review .review-container {
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-  grid-gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+  grid-gap: 1.5625rem;
   max-width: 100%;
   height: -moz-fit-content;
   height: fit-content;
 }
 .review .review-container .review-child {
+  box-shadow: hsla(324, 81%, 55%, 0.9) 0px 10px 20px, hsla(324, 81%, 55%, 0.239) 0px 6px 6px;
+  padding: 0.98rem;
+}
+.review .review-container .review-child:hover {
+  scale: 1.02;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(80, 79, 79, 0.24) 0px 6px 6px;
-  box-shadow: 0px 3px 8px;
-  padding: 0.5rem;
 }
 .review .review-container .review-child .customer-details {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 20px;
+  max-width: 100%;
 }
 .review .review-container .review-child .customer-details img {
   border: 1px solid hsl(324, 81%, 65%);
   width: 3.75rem;
+  height: 3.75rem;
   border-radius: 50%;
-  aspect-ratio: 1/1;
 }
 .review .review-container .review-child .customer-details .star {
   font-size: 1rem;
@@ -434,9 +446,6 @@ header #menu {
 *             Appointment Section         *
 *                                         *
 * * * * * * * * * * * * * * * * * * * * * */
-.appointment h1 {
-  margin-bottom: 3.125rem;
-}
 .appointment .appointment-container {
   display: flex;
   align-items: center;
@@ -461,8 +470,10 @@ header #menu {
   width: 100%;
   padding: 1.125rem;
   margin: 0 auto;
+  border: unset;
   margin-bottom: 1.25rem;
   color: #000;
+  border-radius: 0.5em;
 }
 .appointment .appointment-container div form input::-moz-placeholder, .appointment .appointment-container div form textarea::-moz-placeholder {
   color: gray;
@@ -473,18 +484,13 @@ header #menu {
 }
 .appointment .appointment-container div form input:focus,
 .appointment .appointment-container div form textarea:focus {
-  outline: 1px solid #b048e0;
+  outline: 2px solid #e92f9f;
+}
+.appointment .appointment-container div form textarea {
+  resize: none;
 }
 .appointment .appointment-container div form button {
-  display: block;
-  align-self: flex-end;
-  background: #b048e0;
-  padding: 1em;
-  border: unset;
   margin-left: auto;
-}
-.appointment .appointment-container div textarea {
-  resize: none;
 }
 
 /* * * * * * * * * * * * * * * * * * * *  * 
@@ -503,14 +509,16 @@ footer .flex-parent-1,
 footer .flex-parent-2 {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 100%;
 }
 footer .flex-parent-1 {
   padding-bottom: 0.75rem;
+  gap: 1rem;
 }
 footer .flex-parent-2 {
   padding-top: 1.25rem;
+  justify-content: space-between;
 }
 footer .flex-child {
   line-height: 1.5;
@@ -521,15 +529,15 @@ footer .flex-child:nth-child(1) {
 footer .flex-child:nth-child(1) p {
   padding: 1.25rem;
   padding-left: 0;
-  max-width: 80%;
+  max-width: 100%;
 }
-footer .flex-child:nth-child(2), footer .flex-child:nth-child(3) {
-  margin-top: 57px;
+footer .flex-child:not(:first-child) {
+  width: 25%;
 }
-footer .flex-child:nth-child(2) ul, footer .flex-child:nth-child(3) ul {
+footer .flex-child:not(:first-child) ul {
   list-style-type: none;
 }
-footer .flex-child:nth-child(2) ul li a, footer .flex-child:nth-child(3) ul li a {
+footer .flex-child:not(:first-child) ul li a {
   text-decoration: none;
 }
 footer .flex-child img {
@@ -540,7 +548,7 @@ footer .flex-child .flex-child-span {
   display: block;
 }
 footer .flex-child .social-link {
-  margin-top: 5px;
+  margin-top: 15px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -549,6 +557,9 @@ footer .flex-child .social-link {
 footer .flex-child .social-link li {
   scale: 1.5;
   margin-right: 20px;
+}
+footer .flex-child .social-link li on-icon:nth-child(3) {
+  color: red;
 }
 
 /* * * * * * * * * * * * * * * * * * * *  * 
@@ -566,15 +577,22 @@ footer .flex-child .social-link li {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: 50vh;
+  height: 25vh;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  opacity: 1;
   transition: all 10s ease-in;
+  z-index: 100;
 }
 
 @media screen and (width <= 500px) {
   footer .flex-parent-2 {
     flex-direction: column;
+  }
+  .services-parent .services-child img {
+    max-width: 60%;
+    width: 60%;
+    height: 120px;
   }
 }
 @media screen and (width <= 768px) {
@@ -586,29 +604,21 @@ footer .flex-child .social-link li {
   }
   header nav ul li {
     display: block;
+    animation: none;
+  }
+  header nav button {
+    margin-right: 1.2rem;
   }
   header nav #menu {
     display: inline-block;
     font-size: 24px;
     z-index: 1000;
+    margin: 0 10px;
+    transition: all 5s ease-in;
   }
   header nav #menu :hover {
     cursor: pointer;
     color: #fe3fe2;
-  }
-  .spacer {
-    flex-direction: column;
-    height: auto;
-  }
-  .spacer .about-brand,
-  .spacer .about-ceo {
-    min-width: 100%;
-  }
-  .about-ceo {
-    border-top: 2px solid #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .hero {
     flex-direction: column-reverse;
@@ -619,14 +629,22 @@ footer .flex-child .social-link li {
     height: 40%;
     width: 100%;
   }
-  .hero .hero-img-container {
-    scale: 0.8;
+  .hero img {
+    height: auto;
     max-width: 100%;
-    max-height: 50%;
   }
-  .hero .hero-img-container img {
-    height: 100%;
-    width: 100%;
+  .spacer {
+    flex-direction: column;
+    height: auto;
+  }
+  .spacer .about-brand,
+  .spacer .about-ceo {
+    min-width: 100%;
+  }
+  .about-ceo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .section-heading {
     text-align: center;
@@ -647,26 +665,21 @@ footer .flex-child .social-link li {
   .appointment-container button {
     width: 100%;
   }
-  .flex-parent-1 {
+  footer .flex-parent-1 {
     flex-direction: column;
   }
-  .flex-parent-1 .flex-child:nth-child(1) {
+  footer .flex-parent-1 .flex-child {
     max-width: 100%;
   }
-  .flex-parent-1 .flex-child:nth-child(1) p {
+  footer .flex-parent-1 .flex-child:nth-child(1) {
+    max-width: 100%;
+  }
+  footer .flex-parent-1 .flex-child:nth-child(1) p {
     max-width: 100%;
   }
 }
 @media screen and (width <= 1024px) {
   header {
     position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-}
-@media screen and (width > 768px) {
-  .about-ceo {
-    border-left: 2px solid #fff;
   }
 }/*# sourceMappingURL=style.css.map */

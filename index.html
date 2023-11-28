@@ -11,11 +11,11 @@
       property="og:description"
       content="Official webpage for Styled by Stella." />
 
-    <link rel="icon" type="image/svg+xml" href="/assets/sbs.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
 
     <!-- CSS and JavaScript -->
     <link rel="stylesheet" href="/styles/style.css" />
-    <script defer src="/src/script.js"></script>
+    <script defer type="module" src="/src/script.js"></script>
     <!-- CSS and JavaScript -->
 
     <script
@@ -34,9 +34,7 @@
 
   <body>
     <header class="">
-      <div class="img-wrap">
-        <img src="/assets/sbs.png" alt="Styled By Stella Logo" />
-      </div>
+      <img src="/assets/sbs.png" alt="Styled By Stella Logo" />
 
       <nav>
         <ul id="list" class="list">
@@ -45,7 +43,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#reviews">Review</a></li>
         </ul>
-        <button class="hidden"><a href="#appointment">Appointment</a></button>
+        <button class="hidden"><a href="#appointment">Get Started</a></button>
         <span id="menu"><ion-icon name="menu"></ion-icon></span>
       </nav>
     </header>
@@ -58,12 +56,9 @@
           natus harum <br />
           cumque saepe quasi ullam! Cupiditate aliquid fuga amet ex.
         </p>
-
         <button class="hidden">Book Appointment</button>
       </div>
-      <div class="hero-img-container">
-        <img class="hidden" src="/assets/cover1.png" alt="Hero Image" />
-      </div>
+      <img class="hidden" src="/assets/cover1.png" alt="Hero Image" />
     </article>
 
     <section class="about" id="about">
@@ -81,100 +76,43 @@
           </p>
         </div>
         <div class="about-ceo hidden-el">
-          <div>
-            <img src="/assets/logo.png" alt="CEO Image" />
-          </div>
-
-          <div>
-            <h2>CEO</h2>
-            <p>
-              Amajene Stella is the CEO of Styled By Stella. Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet
-              consectetur adipisicing elit. Modi eaque repellendus nisi facere,
-              hic asperiores? Voluptas sapiente hic exercitationem atque, ullam
-              reprehenderit! Architecto ipsa quod in vitae deserunt quisquam
-              inventore, mollitia placeat reiciendis numquam odio, earum
-              aspernatur error dolor iste?
-            </p>
-          </div>
+          <img src="/assets/logo.png" alt="CEO Image" />
+          <h2>CEO</h2>
+          <p>
+            Amajene Stella is the CEO of Styled By Stella. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Modi eaque repellendus nisi facere,
+            hic asperiores? Voluptas sapiente hic exercitationem atque, ullam
+            reprehenderit! Architecto ipsa quod in vitae deserunt quisquam
+            inventore, mollitia placeat reiciendis numquam odio, earum
+            aspernatur error dolor iste?
+          </p>
         </div>
       </div>
     </section>
 
     <section class="services" id="services">
       <h1 class="section-heading">Services</h1>
-
       <div class="services-parent">
-        <div class="services-child hidden-el">
-            <img src="/assets/logo.png" alt="display image" />
-          
+        <template id="srv-temp">
+          <div class="services-child hidden-el">
+            <img loading="lazy" src="/assets/logo.png" alt="display image" />
             <div class="text-container">
-            <h2>Service Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
-              numquam id voluptates, impedit placeat error veritatis similique
-              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
-              veniam quae et architecto quis!
-            </p>
+              <h2>Service Title</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+                ipsam numquam id voluptates, impedit placeat error veritatis
+                
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div class="services-child hidden-el">
-            <img loading="lazy" src="/assets/logo.png" alt="display image" />
-          <div class="text-container">
-            <h2>Service Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
-              numquam id voluptates, impedit placeat error veritatis similique
-              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
-              veniam quae et architecto quis!
-            </p>
-          </div>
-        </div>
-
-        <div class="services-child hidden-el">
-            <img loading="lazy" src="/assets/logo.png" alt="display image" />
-          <div class="text-container">
-            <h2>Service Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
-              numquam id voluptates, impedit placeat error veritatis similique
-              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
-              veniam quae et architecto quis!
-            </p>
-          </div>
-        </div>
-
-        <div class="services-child hidden-el">
-            <img loading="lazy" src="/assets/logo.png" alt="display image" />
-          <div class="text-container">
-            <h2>Service Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
-              numquam id voluptates, impedit placeat error veritatis similique
-              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
-              veniam quae et architecto quis!
-            </p>
-          </div>
-        </div>
-
-        <div class="services-child hidden-el">
-            <img loading="lazy" src="/assets/logo.png" alt="display image" />
-          <div class="text-container">
-            <h2>Service Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ipsam
-              numquam id voluptates, impedit placeat error veritatis similique
-              sapiente quam facilis repudiandae, quaerat reiciendis eaque,
-              veniam quae et architecto quis!
-            </p>
-          </div>
-        </div>
+        </template>
       </div>
     </section>
 
     <section class="review" id="reviews">
       <h1 class="section-heading">Reviews</h1>
+
       <div class="review-container">
         <div class="review-child hidden-el">
           <div class="customer-details">
@@ -316,12 +254,12 @@
           <img loading="lazy" src="/assets/Team-bro.svg" alt="illustration" />
         </div>
         <div class="form hidden-el">
-          <form method="get">
+          <form method="get" id="myForm">
             <input
               required
               type="text"
               name="name"
-              id="name"
+              id="emailName"
               placeholder="Marie Brianna" />
 
             <input
@@ -331,6 +269,13 @@
               id="emailSubject"
               placeholder="mariebrianna@gmail.com" />
 
+            <input
+              required
+              type="date"
+              name="date"
+              id="emailDate"
+              placeholder="dd/mm/yyyy" />
+
             <textarea
               required
               name="message"
@@ -338,7 +283,8 @@
               cols="30"
               rows="10"
               placeholder="Send Us A Message"></textarea>
-            <button id="sendEmail" type="submit">Send an email</button>
+
+            <button id="sendEmail" type="submit" reset>Send an email</button>
           </form>
         </div>
       </div>
@@ -352,12 +298,26 @@
           </div>
           <h2>Styled by stella</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            veritatis debitis est dignissimos possimus, accusamus alias omnis
-            laudantium ullam distinctio nostrum ipsum odio expedita natus
-            eveniet iste recusandae assumenda ex.
+            StyledbyStellaaa is an amazing beauty place where your hair needs
+            are met with a lively and professional service.
           </p>
         </div>
+        <!-- <div class="flex-child">
+          <h2>Services</h2>
+          <ul>
+            <li>Wig installs</li>
+            <li>Bridal installation</li>
+            <li>Hairstyling</li>
+            <li>Wig revamping</li>
+            <li>Tinting/ coloring</li>
+            <li>Ponytails</li>
+            <li>Sew-ins with leave out</li>
+            <li>Sew-ins with closure</li>
+            <li>Double part sew-in</li>
+            <li>Wig Making</li>
+            <li>Available for traveling jobs</li>
+          </ul>
+        </div> -->
         <div class="flex-child">
           <h2>Browse</h2>
           <ul>
@@ -370,28 +330,44 @@
         <div class="flex-child">
           <h2>Contact Us</h2>
           <p>
-            <span class="flex-child-span">Address line 1, City, Country</span>
+            <span class="flex-child-span"
+              >427, 4th Avenue North, Saskatoon.<br />
+              Saskatchewan Province, Canada</span
+            >
             <span class="flex-child-span">stella@gmail.com</span>
-            <span class="flex-child-span">+13142651346</span>
+            <span class="flex-child-span"
+              ><ion-icon name="call"></ion-icon> +1(306)3512917</span
+            >
           </p>
 
           <ul class="social-link">
             <li>
-              <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+              <a
+                href="https://www.instagram.com/styled_by_stellaaa"
+                target="_blank"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
             </li>
             <li>
-              <a href="#"><ion-icon name="logo-whatsapp"></ion-icon></a>
+              <a href="https://wa.me/message/+13063512917" target="_blank"
+                ><ion-icon name="logo-whatsapp"></ion-icon
+              ></a>
             </li>
             <li>
-              <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+              <a href="https://youtube.com/" target="_blank"
+                ><ion-icon name="logo-youtube"></ion-icon
+              ></a>
             </li>
           </ul>
         </div>
       </div>
       <hr />
       <div class="flex-parent-2">
-        <div>Copyright © 2023 All Rights Reserved. SBS.</div>
-        <div>Made with ❤ by @Dev. Ralph</div>
+        <div>Copyright © SBS 2023 | All Rights Reserved.</div>
+        <div>
+          Made with ❤ by
+          <a href="http://portfolio.dev-raph.vercel.app">@Dev. Ralph</a>
+        </div>
       </div>
     </footer>
   </body>

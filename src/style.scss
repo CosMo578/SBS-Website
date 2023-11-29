@@ -107,7 +107,7 @@ header {
         li {
             display: inline-block;
             margin-right: 1.875rem;
-            animation: slide-left 2s ease-in;
+            animation: slide-left 2s ease-in forwards;
 
             &:nth-child(1) {
                 animation-delay: 1500ms;
@@ -141,7 +141,7 @@ header {
         background-color: transparent;
         backdrop-filter: blur(7px);
         padding: 0.5em;
-        animation: slide-left 2s ease-in 1900ms forwards;
+        animation: slide-left 2s ease-in 2000ms forwards;
     }
 
     #menu {
@@ -483,6 +483,14 @@ header {
 
             form {
 
+                input[type="date"]:not(:focus) {
+                    color: gray
+                }
+
+                input[type="date"]:focus {
+                    color: #000;
+                }
+
                 input,
                 textarea {
                     display: block;
@@ -534,6 +542,7 @@ footer {
         display: flex;
         align-items: flex-start;
         justify-content: space-evenly;
+        width: 100%;
         max-width: 100%;
     }
 
@@ -551,7 +560,7 @@ footer {
         line-height: 1.5;
 
         &:nth-child(1) {
-            max-width: 50%;
+            width: 50%;
 
             p {
                 padding: 1.25rem;
@@ -572,14 +581,6 @@ footer {
             }
         }
 
-        // &:nth-child(2) {
-        //     ul {
-        //         width: 100%;
-        //         display: grid;
-        //         grid-template-columns: repeat(2, minmax(auto, 1fr));
-        //         gap: auto;
-        //     }
-        // }
 
         img {
             max-width: 50px;
@@ -601,13 +602,20 @@ footer {
                 scale: 1.5;
                 margin-right: 20px;
 
-                &:nth-child(1) {}
-
-                &:nth-child(2) {}
-
-                on-icon:nth-child(3) {
-                    color: red;
+                img {
+                    filter: grayscale(100%);
+                    filter: blur(10%);
+                    transition: all 1s ease-in;
                 }
+                img:hover {
+                    filter: grayscale(0);
+                    filter:  blur(0);
+                }
+                // &:nth-child(2) {}
+
+                // on-icon:nth-child(3) {
+                //     color: red;
+                // }
 
             }
         }
@@ -639,18 +647,20 @@ footer {
 }
 
 @media screen and (width <=500px) {
-    footer {
-        .flex-parent-2 {
-            flex-direction: column;
-        }
-    }
-
     .services-parent {
 
         .services-child img {
             max-width: 60%;
             width: 60%;
             height: 120px;
+        }
+    }
+}
+
+@media screen and (width <=600px) {
+    footer {
+        .flex-parent-2 {
+            flex-direction: column;
         }
     }
 }
@@ -761,6 +771,7 @@ footer {
             flex-direction: column;
 
             .flex-child {
+                width: fit-content;
                 max-width: 100%;
 
                 &:nth-child(1) {

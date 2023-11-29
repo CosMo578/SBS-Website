@@ -163,7 +163,7 @@ header ul {
 header ul li {
   display: inline-block;
   margin-right: 1.875rem;
-  animation: slide-left 2s ease-in;
+  animation: slide-left 2s ease-in forwards;
 }
 header ul li:nth-child(1) {
   animation-delay: 1500ms;
@@ -190,7 +190,7 @@ header button {
   -webkit-backdrop-filter: blur(7px);
           backdrop-filter: blur(7px);
   padding: 0.5em;
-  animation: slide-left 2s ease-in 1900ms forwards;
+  animation: slide-left 2s ease-in 2000ms forwards;
 }
 header #menu {
   display: none;
@@ -464,6 +464,12 @@ header #menu {
   max-height: -moz-fit-content;
   max-height: fit-content;
 }
+.appointment .appointment-container div form input[type=date]:not(:focus) {
+  color: gray;
+}
+.appointment .appointment-container div form input[type=date]:focus {
+  color: #000;
+}
 .appointment .appointment-container div form input,
 .appointment .appointment-container div form textarea {
   display: block;
@@ -510,6 +516,7 @@ footer .flex-parent-2 {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
+  width: 100%;
   max-width: 100%;
 }
 footer .flex-parent-1 {
@@ -524,7 +531,7 @@ footer .flex-child {
   line-height: 1.5;
 }
 footer .flex-child:nth-child(1) {
-  max-width: 50%;
+  width: 50%;
 }
 footer .flex-child:nth-child(1) p {
   padding: 1.25rem;
@@ -558,8 +565,14 @@ footer .flex-child .social-link li {
   scale: 1.5;
   margin-right: 20px;
 }
-footer .flex-child .social-link li on-icon:nth-child(3) {
-  color: red;
+footer .flex-child .social-link li img {
+  filter: grayscale(100%);
+  filter: blur(10%);
+  transition: all 1s ease-in;
+}
+footer .flex-child .social-link li img:hover {
+  filter: grayscale(0);
+  filter: blur(0);
 }
 
 /* * * * * * * * * * * * * * * * * * * *  * 
@@ -586,13 +599,15 @@ footer .flex-child .social-link li on-icon:nth-child(3) {
 }
 
 @media screen and (width <= 500px) {
-  footer .flex-parent-2 {
-    flex-direction: column;
-  }
   .services-parent .services-child img {
     max-width: 60%;
     width: 60%;
     height: 120px;
+  }
+}
+@media screen and (width <= 600px) {
+  footer .flex-parent-2 {
+    flex-direction: column;
   }
 }
 @media screen and (width <= 768px) {
@@ -669,6 +684,8 @@ footer .flex-child .social-link li on-icon:nth-child(3) {
     flex-direction: column;
   }
   footer .flex-parent-1 .flex-child {
+    width: -moz-fit-content;
+    width: fit-content;
     max-width: 100%;
   }
   footer .flex-parent-1 .flex-child:nth-child(1) {

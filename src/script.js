@@ -43,10 +43,11 @@ function sendMail() {
   // Create a "mailto" URL with the subject and body parameters
   const mailtoURL = `mailto:${encodeURIComponent(recipient)}
   ?subject=${encodeURIComponent(`${subject} on ${date}`)}
-  &body=${encodeURIComponent(`From ${name} ${content}`)}`;
+  &body=${encodeURIComponent(`From ${name} \n ${content}`)}`;
 
   // Open the user's default email application with the "mailto" URL
-  window.location.href = mailtoURL;
+  window.location.href =  mailtoURL;
+  // window.open(mailtoURL, '_blank');
   let form = document.getElementById('myForm');
   form.reset();
 }

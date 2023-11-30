@@ -6,10 +6,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Styled By Stella</title>
+    <meta property="og:title" content="Styled By Stella" />
     <meta property="og:type" content="business website" />
     <meta
       property="og:description"
-      content="Official webpage for Styled by Stella." />
+      content="A hair Styling Brand. The Official Website for Styled By Stella" />
 
     <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
 
@@ -34,13 +35,14 @@
 
   <body>
     <header class="">
-      <img src="/assets/sbs.png" alt="Styled By Stella Logo" />
+      <img src="/assets/sbs.png" width="362" height="354" alt="Styled By Stella Logo" />
 
       <nav>
         <ul id="list" class="list">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#reviews">Review</a></li>
         </ul>
         <button class="hidden"><a href="#appointment">Get Started</a></button>
@@ -58,7 +60,7 @@
         </p>
         <button class="hidden">Book Appointment</button>
       </div>
-      <img class="hidden" src="/assets/cover1.png" alt="Hero Image" />
+      <img class="hidden" src="/assets/cover1.png" width="720" height="862" alt="Hero Image" />
     </article>
 
     <section class="about" id="about">
@@ -106,6 +108,19 @@
             </div>
           </div>
         </template>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <h1 class="section-heading">Gallery</h1>
+      <div class="gallery-parent">
+        <img class="hidden-el" src="/assets/images/img1.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
+        <img class="hidden-el" src="/assets/images/img2.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
+        <img class="hidden-el" src="/assets/images/img3.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
+        <img class="hidden-el" src="/assets/images/img3.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
+        <img class="hidden-el" src="/assets/images/img3.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
+        <img class="hidden-el" src="/assets/images/img3.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
+        <img class="hidden-el" src="/assets/images/img3.jpg" width="3024" height="4032" alt="customer image" loading="lazy" />
       </div>
     </section>
 
@@ -328,18 +343,26 @@
           </ul>
         </div>
         <div class="flex-child">
+          <h2>Opening Hours</h2>
+          <ul>
+            <li>Monday - Friday: 8:30am - 6:30pm</li>
+            <li>Saturday: 9:30am - 7:00pm</li>
+          </ul>
+        </div>
+        <div class="flex-child">
           <h2>Contact Us</h2>
           <p>
             <span class="flex-child-span"
-              ><ion-icon name="location"></ion-icon> 427, 4th Avenue
-              North, Saskatoon.<br />
+              ><ion-icon name="location"></ion-icon> 427, 4th Avenue North,
+              Saskatoon.<br />
               Saskatchewan Province, Canada</span
             >
             <span class="flex-child-span"
               ><ion-icon name="mail"></ion-icon> stella@gmail.com</span
             >
             <span class="flex-child-span"
-              ><ion-icon name="call"></ion-icon> +1(306)3512917</span
+              ><ion-icon name="call"></ion-icon>
+              <a href="tel:+13063512917">+1(306)3512917</a></span
             >
           </p>
 
@@ -348,15 +371,18 @@
               <a
                 href="https://www.instagram.com/styled_by_stellaaa"
                 target="_blank"
-                ><img src="/assets/icons/instagram.svg" alt="instagram svg"></a>
+                ><img src="/assets/icons/instagram.svg" alt="instagram svg"
+              /></a>
             </li>
             <li>
               <a href="https://wa.me/message/+13063512917" target="_blank"
-                ><img src="/assets/icons/whatsapp.svg" alt="whatsapp svg"></a>
+                ><img src="/assets/icons/whatsapp.svg" alt="whatsapp svg"
+              /></a>
             </li>
             <li>
               <a href="https://youtube.com/" target="_blank"
-                ><img src="/assets/icons/youtube.svg" alt="youtube svg"></a>
+                ><img src="/assets/icons/youtube.svg" alt="youtube svg"
+              /></a>
             </li>
           </ul>
         </div>

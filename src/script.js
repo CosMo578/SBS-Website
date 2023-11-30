@@ -56,7 +56,7 @@ sendEmailButton.addEventListener('click', sendMail);
 const srvGrid = document.querySelector('.services-parent');
 const serviceTemplate = document.getElementById('srv-temp');
 
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 4; i++) {
   srvGrid.append(serviceTemplate.content.cloneNode(true));
 }
 
